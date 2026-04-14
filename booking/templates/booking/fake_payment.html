@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+
+    <div class="card shadow-lg border-0 rounded-4 p-5 text-center" 
+         style="max-width: 450px; width:100%; background: #ffffff;">
+
+        <!-- Title -->
+        <h2 class="fw-bold mb-2" style="color:#2c3e50;">
+            Complete Your Payment
+        </h2>
+
+        <p class="text-muted mb-4">
+            Scan the QR code below to securely complete your booking
+        </p>
+
+        <!-- QR Code Box -->
+        <div class="p-3 rounded-4 mb-4" 
+             style="background: linear-gradient(135deg, #f5f7fa, #e4ecf7);">
+
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRQB2aXXVcKLAlEjJYpNEsbWzRz5DaJxre250kjcfXcBP5OSul6lI7vpRk0Y-qDpKA8eRdFXY-p_ldHF0ecc9zAAS6dBUl_LY00kO3YM_hAfgTpJfrUjlZH2tL7BWJJus_P9qJGQQ&usqp=CAc"
+                 class="img-fluid rounded-3 shadow-sm"
+                 style="max-width: 220px;">
+        </div>
+
+        <!-- Status Text -->
+        <p class="small text-muted mb-4">
+            After completing the payment, click below to confirm.
+        </p>
+
+        <!-- Button -->
+        <div class="d-grid">
+            <a href="{% url 'confirm_payment' booking.id %}" 
+               class="btn btn-success btn-lg rounded-3"
+               style="background: linear-gradient(135deg, #28a745, #20c997); border: none;">
+                ✅ I Have Paid
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

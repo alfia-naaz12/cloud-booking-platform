@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Database
+db.sqlite3
+
+# Environment variables (VERY IMPORTANT)
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Django
+staticfiles/
+media/

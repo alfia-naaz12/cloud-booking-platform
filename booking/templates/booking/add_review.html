@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4 p-5 mx-auto" style="max-width:600px;">
+
+        <h3 class="fw-bold mb-4 text-center">Leave a Review</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Rating</label>
+                {{ form.rating }}
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Comment</label>
+                {{ form.comment }}
+            </div>
+
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg">
+                    Submit Review
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
