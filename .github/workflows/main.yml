@@ -14,22 +14,26 @@ jobs:
       EMAIL_HOST_PASSWORD: testpassword
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4   # ✅ updated
+    - name: 1️⃣ Checkout Code
+      uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v5   # ✅ updated
+    - name: 2️⃣ Setup Python
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.10'   # ✅ FIXED (instead of 3.7)
+        python-version: '3.10'
 
-    - name: Install Dependencies
+    - name: 3️⃣ Install Dependencies
       run: |
         pip install -r requirements.txt
 
-    - name: Run Django Checks
+    - name: 4️⃣ Show Files (DEBUG)
+      run: |
+        ls -la
+
+    - name: 5️⃣ Run Django Check
       run: |
         python manage.py check
 
-    - name: Run Migrations Check
+    - name: 6️⃣ Migration Check
       run: |
         python manage.py makemigrations --check --dry-run
