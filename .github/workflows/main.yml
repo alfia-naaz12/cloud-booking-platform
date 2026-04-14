@@ -8,14 +8,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      SECRET_KEY: testsecretkey
+      EMAIL_HOST_USER: test@example.com
+      EMAIL_HOST_PASSWORD: testpassword
+
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4   # ✅ updated
 
     - name: Setup Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5   # ✅ updated
       with:
-        python-version: '3.7'
+        python-version: '3.10'   # ✅ FIXED (instead of 3.7)
 
     - name: Install Dependencies
       run: |
